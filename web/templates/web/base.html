@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <title>{% block title %}   BlockPost  {% endblock %}</title>
+    </head>
+        <body>
+            <h1>BlogPost</h1>
+            {% if request.user.is_authenticated %}
+            <p>Hallo {{request.user.username}}!</p>
+            <a href="{% url 'web:logout' %}">Logout</a>
+
+            {% else %}
+            <a href="{% url 'web:login' %}">Login</a>
+            <a href="{% url 'web:register' %}">Account anlegen</a>
+            {% endif %}
+            {% block authForm %}
+
+            {% endblock %}
+        </body>
+    
+
+</html>

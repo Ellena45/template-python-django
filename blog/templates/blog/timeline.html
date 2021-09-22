@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block blogContent%}
+
+    {% for post in posts %}
+    <p>
+        {{ post.massage }}
+    </p>
+    {% empty %}
+        <p>Es gibt noch keine Einträge</p>
+    {% endfor%}
+
+{% endblock %}
